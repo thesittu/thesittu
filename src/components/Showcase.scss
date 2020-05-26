@@ -1,0 +1,22 @@
+.showcase {
+}
+
+.workMenu {
+	margin-bottom: -300px;
+	margin-left: 10px;
+}
+.ilContainer {
+	margin: 20px 20% auto 20%;
+}
+
+.image-list {
+	margin-top: 150px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(205px, 1fr));
+	grid-gap: 0 0;
+	grid-auto-rows: 10px;
+}
+
+.image-list img {
+	width: 280px;
+}

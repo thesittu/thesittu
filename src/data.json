@@ -1,0 +1,92 @@
+{
+	"name": "Ayushi Agrawal",
+	"about_cover_photo": "orange.jpg",
+	"about_main_photo": "the sitttu.jpg",
+	"creations": [
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "3d glasses-01.png",
+			"thumb": "3d glasses-01.png"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "3d glasses-01.png",
+			"thumb": "3d glasses-01.png"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "ayushi.jpg",
+			"thumb": "ayushi.jpg"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "combination logo.jpg",
+			"thumb": "combination logo.jpg"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "icon-02.jpg",
+			"thumb": "icon-02.jpg"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "orange.jpg",
+			"thumb": "orange.jpg"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "the sitttu.jpg",
+			"thumb": "the sitttu.jpg"
+		},
+		{
+			"title": "Apple Logo",
+			"cat": "logo",
+			"path": "owl symmetri line-01.jpg",
+			"thumb": "owl symmetri line-01.jpg"
+		}
+	],
+	"skills": [
+		{
+			"name": "Photoshop",
+			"percent": 70,
+			"color": "teal"
+		},
+		{
+			"name": "Illustrator",
+			"percent": 60,
+			"color": "red"
+		},
+		{
+			"name": "Logo Design",
+			"percent": 90,
+			"color": "yellow"
+		},
+		{
+			"name": "Poster Design",
+			"percent": 80,
+			"color": "pink"
+		},
+		{
+			"name": "Social Media Post",
+			"percent": 50,
+			"color": "green"
+		},
+		{
+			"name": "Cover Photo",
+			"percent": 80,
+			"color": "olive"
+		},
+		{
+			"name": "Others",
+			"percent": 30,
+			"color": "orange"
+		}
+	]
+}

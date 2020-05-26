@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+	/* font-family: "Patrick Hand", cursive; */
+	font-family: "Oswald", sans-serif;
+	box-sizing: border-box;
+}
+
+.intro {
+	width: 100%;
+	height: 100vh;
+}
+
+.home {
+	width: 100%;
+	height: 100vh;
+	/* background-color: white; */
+}
+
+.imgMain {
+	/* background-color: yellow; */
+	width: 100%;
+	height: 100vh;
+	z-index: 3;
+}
+
+#illutstration {
+	position: absolute;
+	/* top: 0; */
+	bottom: -67px;
+	right: 80px;
+	height: 100vh;
+	z-index: 5;
+
+	/* border-bottom-right-radius: 300px; */
+}
+
+#hand {
+	position: absolute;
+	bottom: 52px;
+	right: 260px;
+	height: 70%;
+	z-index: 6;
+	-webkit-animation: rotation 0.7s infinite ease-in-out alternate-reverse;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(-20deg);
+	}
+
+	to {
+		-webkit-transform: rotate(10deg);
+	}
+}
+
+.outShape {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100vh;
+	width: 20%;
+	background-color: #6441a5;
+	z-index: 2;
+}
+
+.inShape {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: white;
+	border-bottom-right-radius: 300px;
+}
+
+.ayushiName {
+	position: absolute;
+	top: 200px;
+	left: 0;
+	margin-left: 50px;
+	margin-top: 80px;
+	font-size: 5rem;
+	font-weight: bold;
+	line-height: 7rem;
+	margin-top: -10px;
+	color: rgb(197, 197, 197);
+}
+
+.ayushiName span {
+	color: rgb(63, 37, 175);
+}
+
+.ayushiName span:hover {
+	cursor: cell;
+}
+
+.ayushiName .inv {
+	background-color: rgb(63, 37, 175);
+	color: white;
+}
+
+.zred {
+	color: white !important;
+	background-color: red;
+}
+
+.zgreen {
+	color: white !important;
+	background-color: green;
+}
+
+.zpurple {
+	color: white !important;
+	background-color: purple;
+}
+
+.zteal {
+	color: white !important;
+	background-color: teal;
+}
+
+.zblue {
+	color: white !important;
+	background-color: blue;
+}
