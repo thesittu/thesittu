@@ -1,12 +1,16 @@
 .showcase {
+	margin-top: 50px;
 }
 
 .workMenu {
-	margin-bottom: -300px;
+	margin-bottom: -200px;
 	margin-left: 10px;
 }
 .ilContainer {
 	margin: 20px 20% auto 20%;
+	@media (max-width: 480px) {
+		margin: 20px 5% auto 5%;
+	}
 }
 
 .image-list {

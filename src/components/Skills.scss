@@ -17,6 +17,9 @@
 	color: white;
 	font-size: 3rem;
 	margin-bottom: 80px;
+	@media (max-width: 480px) {
+		font-size: 2rem;
+	}
 }
 
 .skills h3 {

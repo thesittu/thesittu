@@ -16,8 +16,10 @@
 		"react-carousel-vertical": "^1.10.27",
 		"react-dom": "^16.13.1",
 		"react-full-page": "^0.1.9",
+		"react-photo-gallery": "^8.0.0",
 		"react-scripts": "3.4.1",
 		"react-scroll-to-component": "^1.0.2",
+		"react-sizes": "^2.0.0",
 		"semantic-ui-react": "^0.88.2"
 	},
 	"scripts": {
@@ -42,5 +44,6 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	}
+	},
+	"devDependencies": {}
 }

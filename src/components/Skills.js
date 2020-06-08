@@ -1,5 +1,6 @@
 import "./Skills.scss";
 import React from "react";
+import { withSizes } from "react-sizes";
 import { Segment, Progress, Grid, Header, Icon } from "semantic-ui-react";
 
 class Skills extends React.Component {
@@ -18,6 +19,9 @@ class Skills extends React.Component {
 		}
 		console.log(skills);
 
+		const isMobile = window.innerWidth < 480;
+		const showItems = isMobile ? 1 : 2;
+
 		return (
 			<div className="skillsContainer">
 				<div className="skills">
@@ -25,7 +29,7 @@ class Skills extends React.Component {
 						<Icon name="bolt" color="olive" />
 						My Skills
 					</h1>
-					<Grid columns={2}>
+					<Grid columns={this.props.isMobile ? 1 : 2}>
 						{skills.map(([s1, s2]) => {
 							return (
 								<Grid.Row centered>
@@ -57,4 +61,8 @@ class Skills extends React.Component {
 	}
 }
 
-export default Skills;
+const mapStateToProps = ({ width }) => ({
+	isMobile: width < 480,
+});
+
+export default withSizes(mapStateToProps)(Skills);

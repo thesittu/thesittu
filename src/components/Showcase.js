@@ -1,17 +1,32 @@
 import "./Showcase.scss";
 import React, { createRef } from "react";
 import ImageCard from "./ImageCard";
-import { Menu, Sticky, Ref } from "semantic-ui-react";
+import { Menu, Sticky } from "semantic-ui-react";
+import withSizes from "react-sizes";
 
-const IMAGE_BASE =
-	"https://raw.githubusercontent.com/thesittu/thesittu.github.io/master/imgs/works/";
+import Gallery from "react-photo-gallery";
+import { photos } from "../api/photos";
+
+import CImage from "./CImage";
 
 class Showcase extends React.Component {
 	state = { activeItem: "home" };
 
 	handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-	contextRef = createRef();
+	imageRenderr = ({ index, left, top, key, photo }) => {
+		console.log("Rendering Next");
+		return (
+			<CImage
+				key={key}
+				margin={"5px"}
+				index={index}
+				photo={photo}
+				left={left}
+				top={top}
+			/>
+		);
+	};
 
 	render() {
 		if (!this.props.data) {
@@ -21,20 +36,18 @@ class Showcase extends React.Component {
 		console.log("Creations");
 		console.log(creations);
 
-		const images = creations.map((cc) => {
-			console.log("URL: " + IMAGE_BASE + cc.thumb);
-			return <ImageCard image={cc} />;
-		});
+		// const isMobile = window.innerWidth < 480;
+		// const showItems = isMobile ? 1 : 3;
 
 		const { activeItem } = this.state;
 		return (
 			<div className="showcase">
-				<Sticky
+				{/* <Sticky
 					context={this.contextRef}
 					offset={80}
 					className="workMenu"
 				>
-					<Menu vertical size="big">
+					<Menu vertical size="medium">
 						<Menu.Item
 							name="home"
 							active={activeItem === "home"}
@@ -51,15 +64,24 @@ class Showcase extends React.Component {
 							onClick={this.handleItemClick}
 						/>
 					</Menu>
-				</Sticky>
+				</Sticky> */}
 				<div className="ilContainer">
-					<Ref innerRef={this.contextRef}>
-						<div className="image-list">{images}</div>
-					</Ref>
+					<Gallery
+						className="showcase"
+						photos={photos}
+						direction={"column"}
+						renderImage={this.imageRenderr}
+						// columns={showItems}
+						columns={this.props.isMobile ? 1 : 3}
+					/>
 				</div>
 			</div>
 		);
 	}
 }
 
-export default Showcase;
+const mapSizesToProps = ({ width }) => ({
+	isMobile: width < 480,
+});
+
+export default withSizes(mapSizesToProps)(Showcase);

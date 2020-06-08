@@ -15,7 +15,7 @@ class Header extends React.Component {
 		return (
 			// <Menu fixed="top" size="massive" borderless color="purple" inverted>
 			<Fragment>
-				<div
+				{/* <div
 					style={{
 						width: "100%",
 						height: "100px",
@@ -25,7 +25,7 @@ class Header extends React.Component {
 						background:
 							"linear-gradient(180deg, rgba(255,255,255,1) 57%, rgba(255,255,255,0) 100%)",
 					}}
-				/>
+				/> */}
 				<Menu
 					fixed="top"
 					size="massive"

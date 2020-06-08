@@ -1,14 +1,33 @@
 import "./Intro.scss";
 import React from "react";
 import { Popup } from "semantic-ui-react";
+import { withSizes } from "react-sizes";
+
+import intro_img from "../assets/imgs/ayushi_intro.png";
 
 class Intro extends React.Component {
 	render() {
 		return (
+			<div className="introW">
+				<div className="introTextW">
+					<div className="introText">
+						HI I'M {this.props.isMobile ? <br></br> : null}AYUSHI
+						AGRAWAL<br></br>GRAPHICS DESIGNER
+					</div>
+				</div>
+				<div className="introImgW">
+					<img src={intro_img} />
+				</div>
+			</div>
+		);
+	}
+
+	rrender() {
+		return (
 			<div className="intro">
 				<div className="home">
 					<div className="imgMain">
-						<img id="illutstration" src="/images/rest.png" />
+						<img id="illutstration" src={intro_img} />
 						<img id="hand" src="/images/hand.png" />
 					</div>
 					<div className="outShape">
@@ -49,4 +68,7 @@ class Intro extends React.Component {
 	}
 }
 
-export default Intro;
+const mapStateToProps = ({ width }) => ({
+	isMobile: width < 480,
+});
+export default withSizes(mapStateToProps)(Intro);

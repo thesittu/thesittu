@@ -15,3 +15,16 @@
 	font-size: 1.3rem;
 	line-height: 2.5rem;
 }
+
+.aboutImg {
+	// background-color: yellow;
+	margin-top: 200px;
+	margin-left: -50px;
+	transform: scale(1.55);
+	opacity: 0.8;
+	@media (max-width: 480px) {
+		margin-top: 10px;
+		margin-left: 0px;
+		transform: scale(1.3);
+	}
+}
