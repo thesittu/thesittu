@@ -1,20 +1,49 @@
 import React, { Fragment } from "react";
-import { Menu, Divider } from "semantic-ui-react";
+import {
+	Menu,
+	Divider,
+	Container,
+	Icon,
+	Image,
+	Sidebar,
+	Responsive,
+} from "semantic-ui-react";
+import { withSizes } from "react-sizes";
 
 class Header extends React.Component {
-	state = {};
+	state = { visible: false };
 
 	handleItemClick = (e, { name }) => {
 		this.setState({ activeItem: name });
 		this.props.open(name);
 	};
 
+	getMenus = () => {
+		let menus = [
+			{ name: "home", dn: "Home" },
+			{ name: "about", dn: "About" },
+			{ name: "skills", dn: "Skills" },
+			{ name: "creations", dn: "Creations" },
+			{ name: "contact", dn: "Contact Me" },
+		];
+		return menus.map((menu) => {
+			return (
+				<Menu.Item
+					name={menu.name}
+					active={this.state.activeItem === menu.name}
+					onClick={this.handleItemClick}
+				>
+					{menu.dn}
+				</Menu.Item>
+			);
+		});
+	};
+
 	render() {
 		const { activeItem } = this.state;
 
 		return (
-			// <Menu fixed="top" size="massive" borderless color="purple" inverted>
-			<Fragment>
+			<Sidebar.Pushable as={Fragment}>
 				{/* <div
 					style={{
 						width: "100%",
@@ -26,60 +55,54 @@ class Header extends React.Component {
 							"linear-gradient(180deg, rgba(255,255,255,1) 57%, rgba(255,255,255,0) 100%)",
 					}}
 				/> */}
-				<Menu
-					fixed="top"
-					size="massive"
-					borderless
-					color="purple"
-					secondary
+				<Sidebar
+					as={Menu}
+					animation="overlay"
+					icon="labeled"
+					inverted
+					onHide={() => this.setState({ visible: false })}
+					vertical
+					visible={this.state.visible}
+					width="thin"
 				>
-					<Menu.Item header as="h1">
-						Ayushi Agrawal
-					</Menu.Item>
-					<Menu.Menu position="right">
-						<Menu.Item
-							name="home"
-							active={activeItem === "home"}
-							onClick={this.handleItemClick}
-						>
-							Home
+					<Menu.Item header>Ayushi Agrawal</Menu.Item>
+					{this.getMenus()}
+				</Sidebar>
+				<Sidebar.Pusher>
+					<Menu
+						fixed="top"
+						size="massive"
+						borderless
+						color="purple"
+						secondary
+					>
+						{this.props.isMobile ? (
+							<Menu.Item
+								onClick={() => this.setState({ visible: true })}
+							>
+								<Icon name="sidebar" />
+							</Menu.Item>
+						) : null}
+						<Menu.Item header as="h1">
+							Ayushi Agrawal
 						</Menu.Item>
-						<Menu.Item
-							name="about"
-							active={activeItem === "about"}
-							onClick={this.handleItemClick}
-						>
-							About
-						</Menu.Item>
-						<Menu.Item
-							name="skills"
-							active={activeItem === "skills"}
-							onClick={this.handleItemClick}
-						>
-							Skills
-						</Menu.Item>
-						<Menu.Item
-							name="creations"
-							active={activeItem === "creations"}
-							onClick={this.handleItemClick}
-						>
-							Creations
-						</Menu.Item>
-						<Menu.Item
-							name="contact"
-							active={activeItem === "contact"}
-							onClick={this.handleItemClick}
-						>
-							Contact Me
-						</Menu.Item>
-						<Menu.Item>
-							<Divider />
-						</Menu.Item>
-					</Menu.Menu>
-				</Menu>
-			</Fragment>
+						{this.props.isMobile ? null : (
+							<Menu.Menu position="right">
+								{this.getMenus()}
+								<Menu.Item>
+									<Divider />
+								</Menu.Item>
+							</Menu.Menu>
+						)}
+					</Menu>
+				</Sidebar.Pusher>
+			</Sidebar.Pushable>
 		);
 	}
 }
 
-export default Header;
+const mapStateToProps = ({ width }) => ({
+	isMobile: width < 480,
+});
+
+export default withSizes(mapStateToProps)(Header);

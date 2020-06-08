@@ -1,7 +1,14 @@
 import "./App.scss";
 import React, { Fragment } from "react";
-// import { FullPage, Slide } from "react-full-page";
-// import AwesomeSlider from "react-awesome-slider";
+import {
+	Link,
+	DirectLink,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from "react-scroll";
 
 import Header from "./Header";
 import Intro from "./Intro";
@@ -20,6 +27,13 @@ class App extends React.Component {
 	};
 
 	componentDidMount() {
+		Events.scrollEvent.register("begin", function () {
+			console.log("begin", arguments);
+		});
+
+		Events.scrollEvent.register("end", function () {
+			console.log("end", arguments);
+		});
 		Github.get("")
 			.then((res) => {
 				console.log("Got the data");
@@ -30,6 +44,10 @@ class App extends React.Component {
 				console.log("Error while getting data");
 				console.log(err);
 			});
+	}
+	componentWillUnmount() {
+		Events.scrollEvent.remove("begin");
+		Events.scrollEvent.remove("end");
 	}
 
 	justScroll = (ref, offset = 0) => {
@@ -45,6 +63,7 @@ class App extends React.Component {
 			<Fragment>
 				<Header
 					open={(item) => {
+						console.log("Going To");
 						console.log(item);
 						switch (item) {
 							case "about":
@@ -72,6 +91,7 @@ class App extends React.Component {
 					}}
 				/>
 				<Skills
+					name="skills"
 					data={this.state.data}
 					ref={(section) => {
 						this.skills = section;
