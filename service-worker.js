@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/thesittu/precache-manifest.6fcbfc3d5ecc168d77e6f7112187c35b.js"
+  "/thesittu/precache-manifest.c43d20955b8baa86e2fe73530eaae2ce.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0d76547e204116be87c0d5a4e430ec0b",
+    "revision": "f74aaf0cd282ad0527d1ce030b81ead4",
     "url": "/thesittu/index.html"
   },
   {
-    "revision": "15d4132cdcc6cd39a5e5",
+    "revision": "80bb11d22d1c0121dfd1",
     "url": "/thesittu/static/css/main.55052fca.chunk.css"
   },
   {
-    "revision": "5cfe8162409f75538dcc",
-    "url": "/thesittu/static/js/2.dc7e030d.chunk.js"
+    "revision": "aed9eab79f5f2917cc67",
+    "url": "/thesittu/static/js/2.b0329be0.chunk.js"
   },
   {
     "revision": "2089965cc3e0fbb1dda2d650d8277df4",
-    "url": "/thesittu/static/js/2.dc7e030d.chunk.js.LICENSE.txt"
+    "url": "/thesittu/static/js/2.b0329be0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "15d4132cdcc6cd39a5e5",
-    "url": "/thesittu/static/js/main.2b753a0d.chunk.js"
+    "revision": "80bb11d22d1c0121dfd1",
+    "url": "/thesittu/static/js/main.f1a58ef0.chunk.js"
   },
   {
     "revision": "986cfa87ce7fb673484a",
